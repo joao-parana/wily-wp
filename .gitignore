@@ -1,2 +1,5 @@
 .DS_Store
-docs/.DS_Store
+conf/smtp/.GMAILRC
+conf/smtp/container-started-message.txt
+*.log
+lixo/

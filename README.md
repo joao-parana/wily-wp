@@ -1,6 +1,6 @@
 # wily-wp
 
-> This is a Docker image for Wordpress 4.4 on Ubuntu 14.04 with SMTP support
+> This is a Docker image for Wordpress 4.4.2 on Ubuntu 15.10 with SMTP support
 
 **Documentation in Brazilian Portuguese**
 
@@ -42,7 +42,11 @@ Precisamos de um contêiner com Database MySQL. Uma ótima opção
 Usaremos aqui a versão 10.1.10
 
     docker run -d -e MYSQL_ROOT_PASSWORD="xpto" \
+               -e MYSQL_DATABASE="wordpress" \
+               -e MYSQL_USER="wp" \
+               -e MYSQL_PASSWORD="secret" \
                --name mysql-server-01 mariadb:10.1.10
+
     docker logs mysql-server-01
     docker ps -a  | grep mysql-server-01
     docker run -i -t --name wp-4.4 --rm \
@@ -54,7 +58,7 @@ Usaremos aqui a versão 10.1.10
 
     # Subistitua sua-conta-no-gmail pelo se ID. No meu caso é **joao.parana**
 
-Observe que o terminal fica bloqueado na console do Ubuntu 14.04
+Observe que o terminal fica bloqueado na console do Ubuntu 15.10
 
 Para investigar problemas você pode abrir uma nova aba ou janela com um 
 Terminal e executar o comando:
@@ -112,7 +116,7 @@ ou como Issue aqui no projeto do Github.
 ser protgidos e não devem ficar no seu Sistema de Controle de Versão, 
 por isso adicione este tipo de informação apenas em arquivos listados 
 no `.gitignore`
-
+ 
 ![Acertando a configuração da conta no GMail](https://raw.githubusercontent.com/joao-parana/wily-wp/master/docs/images/gmail_login_e_segurança.png)
 
 #### O arquivo /etc/ssmtp/ssmtp.conf
