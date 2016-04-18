@@ -140,9 +140,17 @@ unzip /wp-resources/plugins/dynamic-to-top.3.4.2.zip && \
       unzip /wp-resources/plugins/portfolio-post-type.0.9.2.zip
 cd ../themes
 unzip /wp-resources/themes/one-pager-genesis.zip
+unzip /wp-resources/themes/genesis.zip
 rm -rf __MACOSX/
 cd $MY_DIR
 echo "••• `date` - pwd : `pwd`"
+cd wp-content
+echo "••• `date` - pwd : `pwd`"
+chown -R www-data:www-data *
+ls -lat languages
+ls -lat plugins
+ls -lat themes
+ls -lat upgrade
 echo "•••"
 echo "••• `date` - supervisord take the control"
 echo "•••"

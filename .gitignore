@@ -1,5 +1,6 @@
 .DS_Store
 conf/smtp/.GMAILRC
 conf/smtp/container-started-message.txt
+resources/themes/genesis.zip
 *.log
 lixo/
